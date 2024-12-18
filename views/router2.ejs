@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Router2 Chat</title>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/Socket.js" defer></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .chat-container {
+      width: 60%;
+      border: 1px solid #ccc;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .message-column {
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      height: 300px;
+      overflow-y: auto;
+      padding: 10px;
+      margin-bottom: 15px;
+      background-color: #f9f9f9;
+    }
+
+    .message-column ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .message-column ul li {
+      padding: 5px 10px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .message-input {
+      display: flex;
+      gap: 10px;
+    }
+
+    .message-input input {
+      flex: 1;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .message-input button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      background-color: #007bff;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .message-input button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="chat-container">
+    <h1>Chat Application - Router 2</h1>
+    <div class="message-column">
+      <ul id="messages"></ul>
+    </div>
+    <div class="message-input">
+      <input id="messageInput" type="text" placeholder="Type a message" />
+      <button id="sendBtn">Send</button>
+    </div>
+  </div>
+</body>
+</html>
