@@ -22,7 +22,10 @@ export const signin = async (req, res) => {
     if (!user || !(await bcrypt.compare(password, user.password))) {
       return res.status(400).send('Invalid credentials');
     }
-
+    
+    // jwt.sign() user ka id leke ek token banata hai.
+    // your_secret_key secure key hai jo token ko sign karne ke liye use hoti hai. Ye key sirf server ke paas hoti hai.
+    // expiresIn: '1h': Token 1 ghante ke liye valid hai.
     const token = jwt.sign({ id: user._id }, 'your_secret_key', { expiresIn: '1h' });
     res.cookie('token', token, { httpOnly: true });
     
