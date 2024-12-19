@@ -3,7 +3,7 @@ import http from 'http';
 import { Server } from 'socket.io';
 
 const app = express();//express instance
-const server = http.createServer(app);//instance raped in http server
+const server = http.createServer(app);//instance wrap in http server
 const io = new Server(server); //socket io ko server ke sath integrate kiya he
 
 app.set('view engine', 'ejs');
